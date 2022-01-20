@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-// import contactsReducer from './contactsReducer';
+import teamsReducer from "./teamsReducer";
 
 const reducers = combineReducers({
-    // contacts: contactsReducer,
+    teams: teamsReducer
 });
 
 export default reducers;
