@@ -6,5 +6,11 @@ interface AddTeam {
     payload: Team[];
 }
 
+interface SetTeamFromLS {
+    type: ActionType.SET_TEAMS_FROM_LS,
+    payload: Team[]
+}
+
 export type Action =
     | AddTeam
+    | SetTeamFromLS

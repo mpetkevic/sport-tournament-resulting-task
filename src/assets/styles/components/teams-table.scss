@@ -1,0 +1,35 @@
+.teams-table-wrapper {
+  border: 2px blue solid;
+  width: 60%;
+
+  table {
+    border-spacing: 0;
+    width: 100%;
+    thead, tbody {
+      background-color: lightgray;
+      tr {
+        border-collapse: collapse;
+
+        td {
+          border-bottom: 1px solid #6a6969;
+          border-right: 1px solid #6a6969;
+
+          text-align: center;
+          padding: 10px 0;
+
+          &:last-child {
+            border-right: none;
+          }
+        }
+      }
+    }
+
+    tbody {
+      background-color: white;
+    }
+  }
+
+  p {
+    text-align: center;
+  }
+}

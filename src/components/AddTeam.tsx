@@ -17,11 +17,23 @@ const AddTeam = () => {
         setTeamValue('')
     }
 
+    const onEnterKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if(!teamValue) {
+            return setError(true)
+        }
+
+        if(e.key === 'Enter') {
+            addTeam(teamValue)
+            setTeamValue('')
+        }
+    }
+
     return (
         <div className="add-team-wrapper">
             <input
                 type="text"
                 onChange={(e) => setTeamValue(e.target.value)}
+                onKeyPress={onEnterKeyPress}
                 value={teamValue}
                 placeholder="Add new team"/>
             <button onClick={onAddTeamClick}>Add</button>

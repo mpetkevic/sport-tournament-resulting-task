@@ -8,8 +8,10 @@ import {addTeamsToLS} from "../../utils/storage";
 export const addTeam = (name: string) => {
     const { teams } = store.getState().teams;
 
+    const capitalizeName = name.charAt(0).toUpperCase() + name.slice(1)
+
     const newTeam = {
-        name,
+        name: capitalizeName,
         played: 0,
         wins: 0,
         draws: 0,
@@ -27,4 +29,13 @@ export const addTeam = (name: string) => {
         });
     }
 
+}
+
+export const setTeamsFromLS = (teams: Team[]) => {
+    return (dispatch: Dispatch<Action>) => {
+        dispatch({
+            type: ActionType.SET_TEAMS_FROM_LS,
+            payload: teams,
+        });
+    }
 }
